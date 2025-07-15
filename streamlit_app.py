@@ -7,7 +7,7 @@ import tiktoken
 from io import StringIO
 
 # --- OpenAI Setup ---
-st.title("🔍 Keyword Mapping Tool mit GPT-Scoring")
+st.title("Keyword Mapping Tool mit GPT-Scoring")
 api_key = st.text_input("🔑 OpenAI API Key", type="password")
 if not api_key:
     st.warning("Bitte gib deinen OpenAI API Key ein.")
@@ -23,20 +23,20 @@ Damit das Tool funktioniert, braucht ihr folgende vier CSV-Dateien:
 
 1. **[URLs & Content](https://docs.google.com/spreadsheets/d/1uvKWUdmiQYrc76CJLoFkJTmn_WxpKpcIeNs26XCKhOc/edit?gid=1408231942)**  
    ➤ CSV mit `URL`, `Title Tag`, `Meta Description`, `Content`  
-   ➤ Kann z. B. mit Screaming Frog extrahiert werden
+   ➤ Content muss zuerst mit Screaming Frog extrahiert werden
 
 2. **[Keywords & Cluster](https://docs.google.com/spreadsheets/d/1uvKWUdmiQYrc76CJLoFkJTmn_WxpKpcIeNs26XCKhOc/edit?gid=1581107905)**  
    ➤ Spalte 1 = Hauptkeyword  
-   ➤ Spalte 2 = Cluster-Keyword (optional)
+   ➤ Spalte 2 = Cluster-Keyword
 
 3. **[Google Search Console Report (non-brand)](https://docs.google.com/spreadsheets/d/1uvKWUdmiQYrc76CJLoFkJTmn_WxpKpcIeNs26XCKhOc/edit?gid=1574634156)**  
    ➤ Spalten: `query`, `page`, `clicks`, `impressions`, `ctr`, `position`  
    ➤ Nur non-brand Keywords verwenden
 
 4. **[SERP-OnPage-Daten](https://docs.google.com/spreadsheets/d/1uvKWUdmiQYrc76CJLoFkJTmn_WxpKpcIeNs26XCKhOc/edit?gid=2138481856)**  
-   ➤ Erstellt mit dem [AirOps Tool](https://app.airops.com/digital-leverage-1/workflows/94174/run/once)  
+   ➤ Suchresultate von allen Hauptkeywords mit dem [AirOps Tool](https://app.airops.com/digital-leverage-1/workflows/94174/run/once) ziehen.
    ➤ Danach [diese Tabelle](https://app.airops.com/digital-leverage-1/grids/24678/sheets/31380) als CSV exportieren  
-   ➤ Wichtig: Alle überflüssigen Zeilen am Anfang löschen!
+   ➤ Wichtig: Zuerst immer alle alten URLs aus Tabelle löschen.
 """)
 
 # --- Upload CSVs ---
