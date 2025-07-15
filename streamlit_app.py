@@ -6,13 +6,16 @@ import openai
 import tiktoken
 from io import StringIO
 
-# --- OpenAI Setup ---
-st.title("Keyword Mapping Tool mit GPT-Scoring")
-api_key = st.text_input("🔑 OpenAI API Key", type="password")
+# --- OpenAI API Key ---
+st.subheader("🔑 OpenAI API Key")
+api_key = st.text_input("Bitte gib deinen API Key ein", type="password")
+st.markdown("[💡 API-Key generieren](https://platform.openai.com/api-keys)", unsafe_allow_html=True)
+
 if not api_key:
     st.warning("Bitte gib deinen OpenAI API Key ein.")
     st.stop()
 client = openai.OpenAI(api_key=api_key)
+
 
 # --- Beschreibung & Anleitung ---
 st.header("📁 CSV-Dateien hochladen")
