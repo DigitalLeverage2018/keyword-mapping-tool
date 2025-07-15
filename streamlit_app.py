@@ -157,9 +157,19 @@ Das zu bewertende Keyword lautet: "{keyword}"
 Zur Hilfe findest du hier die Top 3 Suchresultate zu diesem Keyword:
 {serp_text}
 
-Wie gut passt das Keyword zur oben beschriebenen Webseite? Nutze dazu dein eigenes Wissen bezüglich Keywords und Suchabsicht sowie die Meta Daten der Top-Ranking URLs.
+Wie gut passt das Keyword zur oben beschriebenen Webseite?
 
-Bewerte auf einer Skala von 1 bis 5 und gib nur eine Zahl als Antwort zurück.
+Nutze dein Wissen über Suchintentionen, SEO und Rankingfaktoren.
+
+Bewerte auf einer Skala von 1 bis 5:
+
+1 = Passt überhaupt nicht zur Seite  
+2 = Schwache Relevanz  
+3 = Teilweise passend  
+4 = Sehr gute Passung  
+5 = Perfekte Übereinstimmung mit Inhalt & Suchintention
+
+Bewerte auf einer Skala von 1 bis 5 und gib nur eine Zahl als Antwort zurück..
 """
     try:
         response = client.chat.completions.create(
